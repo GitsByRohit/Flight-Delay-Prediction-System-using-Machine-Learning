@@ -1,0 +1,197 @@
+/* ===============================
+   GLOBAL STYLES
+================================ */
+
+body{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background:#0f172a;
+    overflow-x:hidden;
+}
+
+/* ===============================
+   ANIMATED GRADIENT BACKGROUND
+================================ */
+.gradient-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #2563eb
+    );
+
+    z-index:-1;
+}
+
+/* ===============================
+   GLASS NAVBAR
+================================ */
+
+.glass-navbar{
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.navbar-brand{
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+.main-container{
+    margin-top:60px;
+}
+
+
+/* ===============================
+   GLASS CARDS
+================================ */
+
+.card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border-radius:16px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.35);
+    padding:20px;
+    color:white;
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 50px rgba(0,0,0,0.5);
+}
+
+
+/* ===============================
+   TITLES
+================================ */
+
+h1,h2,h3{
+    font-weight:600;
+    color:white;
+}
+
+
+/* ===============================
+   FORM INPUTS
+================================ */
+
+.form-control{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    color:white;
+    border-radius:10px;
+    padding:10px;
+}
+
+.form-control::placeholder{
+    color:#e2e8f0;
+}
+
+.form-control:focus{
+    background:rgba(255,255,255,0.2);
+    border-color:#60a5fa;
+    box-shadow:0 0 8px rgba(96,165,250,0.6);
+    color:white;
+}
+
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.btn-dark{
+    background:linear-gradient(135deg,#6366f1,#2563eb);
+    border:none;
+    border-radius:10px;
+    padding:10px 18px;
+    font-weight:500;
+    transition:all .3s ease;
+}
+
+.btn-dark:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+
+/* ===============================
+   ALERTS
+================================ */
+
+.alert{
+    border-radius:10px;
+}
+
+
+/* ===============================
+   FADE ANIMATION
+================================ */
+
+.fade-in{
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width:768px){
+
+    .card{
+        padding:15px;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+}
+
+/* PAGE FADE ANIMATION */
+
+body {
+    opacity: 0;
+    transition: opacity .6s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* FIX DROPDOWN VISIBILITY */
+
+select.form-control,
+select.form-select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+select option {
+    color: #000000;
+}
