@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center fade-in">
+
+<div class="col-lg-9">
+
+<div class="card p-5">
+
+<h2 class="text-center mb-4 fw-bold">
+✈️ Flight Delay Prediction
+</h2>
+
+<form method="POST" action="{{ url_for('prediction.predict') }}">
+
+<!-- ================= FLIGHT DETAILS ================= -->
+
+<h5 align="center" class="mb-3 fw-semibold">
+✈ Flight Details
+</h5>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Airline</label>
+<select name="airline" class="form-control" required>
+<option value="">Select Airline</option>
+{% for airline in airlines %}
+<option value="{{ airline }}">{{ airline }}</option>
+{% endfor %}
+</select>
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Origin Airport</label>
+<select name="origin_airport" class="form-control" required>
+<option value="">Select Origin Airport</option>
+{% for airport in origins %}
+<option value="{{ airport }}">{{ airport }}</option>
+{% endfor %}
+</select>
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Destination Airport</label>
+<select name="destination_airport" class="form-control" required>
+<option value="">Select Destination Airport</option>
+{% for airport in destinations %}
+<option value="{{ airport }}">{{ airport }}</option>
+{% endfor %}
+</select>
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<!-- ================= SCHEDULE DETAILS ================= -->
+
+<h5 align="center" class="mb-3 fw-semibold">
+📅 Schedule Details
+</h5>
+
+<div class="row">
+
+<div class="col-md-3 mb-3">
+<label class="form-label">Month</label>
+<select name="month" class="form-control" required>
+<option value="">Select Month</option>
+{% for m in months %}
+<option value="{{ m }}">{{ m }}</option>
+{% endfor %}
+</select>
+</div>
+
+<div class="col-md-3 mb-3">
+<label class="form-label">Day of Month</label>
+<input type="number" name="day" class="form-control" min="1" max="31" required>
+</div>
+
+<div class="col-md-3 mb-3">
+<label class="form-label">Day of Week</label>
+<input type="number" name="day_of_week" class="form-control" min="1" max="7" required>
+</div>
+
+<div class="col-md-3 mb-3">
+<label class="form-label">Departure Hour</label>
+<input type="number" name="departure_hour" class="form-control" min="0" max="23" required>
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<!-- ================= DISTANCE ================= -->
+
+<h5 class="mb-3 fw-semibold text-center">
+📏 Flight Distance
+</h5>
+
+<div class="row justify-content-center">
+
+<div class="col-md-4 mb-3">
+<input type="number" name="distance" class="form-control text-center" placeholder="Enter Distance (miles)" required>
+</div>
+
+</div>
+
+<!-- ================= SUBMIT BUTTON ================= -->
+
+<div class="text-center mt-4">
+
+<button id="predict-btn" type="submit" class="btn btn-dark">
+🚀 Predict Delay
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
