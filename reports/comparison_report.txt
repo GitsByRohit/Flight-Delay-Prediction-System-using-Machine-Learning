@@ -1,0 +1,46 @@
+MODEL COMPARISON REPORT
+============================================================
+
+Logistic Regression
+----------------------------------------
+Accuracy   : 0.8016
+Precision  : 0.9763
+Recall     : 0.8160
+F1-Score   : 0.8889
+Confusion Matrix:
+[[  732  1872]
+ [17356 76951]]
+
+SVM
+----------------------------------------
+Accuracy   : 0.8088
+Precision  : 0.9762
+Recall     : 0.8237
+F1-Score   : 0.8935
+Confusion Matrix:
+[[  707  1897]
+ [16628 77679]]
+
+Random Forest
+----------------------------------------
+Accuracy   : 0.7500
+Precision  : 0.9772
+Recall     : 0.7609
+F1-Score   : 0.8556
+Confusion Matrix:
+[[  929  1675]
+ [22549 71758]]
+
+XGBoost
+----------------------------------------
+Accuracy   : 0.7858
+Precision  : 0.9773
+Recall     : 0.7984
+F1-Score   : 0.8789
+Confusion Matrix:
+[[  858  1746]
+ [19011 75296]]
+
+============================================================
+
+Best Model Based on F1-Score: SVM
